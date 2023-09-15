@@ -1,0 +1,487 @@
+:root {
+  --bg-color: lightgray;
+  --text-color: black;
+  --secondary-color: snow;
+}
+
+:root:has(#light:checked) {
+  --bg-color: lightgray;
+  --text-color: black;
+  --secondary-color: snow;
+}
+
+:root:has(#dark:checked) {
+  --bg-color: #232323;
+  --text-color: whitesmoke;
+  --secondary-color: gray;
+}
+
+:root:has(#brown:checked) {
+  --bg-color: #3e282b;
+  --text-color: #dbbea1;
+  --secondary-color: #d34f73;
+}
+
+:root:has(#purple:checked) {
+  --bg-color: #6200EE;
+  --text-color: #03DAC6;
+  --secondary-color: slateblue;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: 100vh;
+  padding-left: 60px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  gap: 2rem;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/* 
+    _   _    ___     _____ ____    _  _____ ___ ___  _   _ 
+   | \ | |  / \ \   / /_ _/ ___|  / \|_   _|_ _/ _ \| \ | |
+   |  \| | / _ \ \ / / | | |  _  / _ \ | |  | | | | |  \| |
+   | |\  |/ ___ \ V /  | | |_| |/ ___ \| |  | | |_| | |\  |
+   |_| \_/_/   \_\_/  |___\____/_/   \_\_| |___\___/|_| \_|
+  */
+
+.nav-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 60px;
+  list-style: none;
+  letter-spacing: 2px;
+  background: var(--secondary-color);
+  box-shadow: 0 1px 3px 1px var(--text-color);
+  overflow: hidden;
+  transition: width 0.5s ease;
+}
+
+.nav-links:hover {
+  width: 250px;
+}
+
+.nav-links li {
+  width: 250px;
+}
+
+.nav-links li i {
+  font-size: 1rem;
+  justify-content: center;
+  width: 20px;
+  text-align: center;
+  margin: 22px 30px 0 22px;
+}
+
+.nav-links li a {
+  display: block;
+  text-decoration: none;
+  color: var(--text-color);
+  height: 60px;
+}
+
+.nav-links li a:hover {
+  background: var(--text-color);
+  color: var(--secondary-color);
+}
+
+.nav-links .active-link {
+  background: var(--text-color);
+  color: var(--secondary-color);
+}
+
+/*
+  _____  _    ____  _  ______  
+ |_   _|/ \  / ___|| |/ / ___| 
+   | | / _ \ \___ \| ' /\___ \ 
+   | |/ ___ \ ___) | . \ ___) |
+   |_/_/   \_\____/|_|\_\____/ 
+*/
+
+#tasks {
+  display: flex;
+  flex-direction: column;
+}
+
+#tasks .user {
+  font-size: 5vh;
+  text-align: center;
+}
+
+#tasks .user .name {
+  font-size: 7vh;
+  color: gray;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#tasks .user .name .editable {
+  padding: 5px;
+  border: 1px dashed transparent;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#tasks .user .name .editable:hover {
+  border-color: #007bff;
+}
+
+#tasks .name-input {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+}
+
+#tasks .progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#tasks .progress .bar-container {
+  width: 250px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 10px;
+  position: relative;
+}
+
+#tasks .progress .bar {
+  width: 100%;
+  height: 100%;
+  background: lightseagreen;
+  border-radius: 1rem;
+  transition: width 0.3s ease-in-out;
+}
+
+#tasks .task-add {
+  width: 40vw;
+  height: 5vh;
+  padding-left: 1rem;
+  border: solid 2px black;
+  border-radius: 1rem;
+  background: whitesmoke;
+}
+
+#tasks .btn-add {
+  width: 10vw;
+  height: 5vh;
+  background: lightseagreen;
+  border: transparent;
+  border-radius: .5rem;
+}
+
+#tasks .task-settings button {
+  width: 3rem;
+  height: 3rem;
+  border: transparent;
+  border-radius: .5rem;
+}
+
+#tasks .btn-done {
+  background: lightgreen;
+}
+
+#tasks .btn-delete {
+  background: lightpink;
+}
+
+#tasks button:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+}
+
+#tasks button:focus {
+  outline: solid 2px black;
+}
+
+#tasks .task-list {
+  display: block;
+  font-size: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+#tasks .task-list .task-item {
+  display: block;
+  width: 50vw;
+  border: solid 2px black;
+  border-radius: .5rem;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  align-items: center;
+  text-align: center;
+  margin: .5rem;
+  padding: .5rem;
+  overflow-wrap: break-word;
+}
+
+.task-item.active {
+  opacity: 1;
+}
+
+#tasks .task-list .task-item .task-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .3rem;
+}
+
+#tasks .completed {
+  text-decoration: line-through;
+}
+
+#tasks .btn-done[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/*
+  ____ _____  _  _____ ___ ____ _____ ___ ____ ____  
+ / ___|_   _|/ \|_   _|_ _/ ___|_   _|_ _/ ___/ ___| 
+ \___ \ | | / _ \ | |  | |\___ \ | |  | | |   \___ \ 
+  ___) || |/ ___ \| |  | | ___) || |  | | |___ ___) |
+ |____/ |_/_/   \_\_| |___|____/ |_| |___\____|____/ 
+*/
+
+#statistics {
+  text-align: center;
+  padding: 20px;
+}
+
+#statistics .stats {
+  width: 20rem;
+  height: 16rem;
+  background: var(--secondary-color);
+  border-radius: 1rem;
+  box-shadow: 0 2px 5px 0 var(--text-color);;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+#statistics .stats .stat-item {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+/*
+     _    ____ _   _ ___ _______     _______ __  __ _____ _   _ _____ ____  
+    / \  / ___| | | |_ _| ____\ \   / / ____|  \/  | ____| \ | |_   _/ ___| 
+   / _ \| |   | |_| || ||  _|  \ \ / /|  _| | |\/| |  _| |  \| | | | \___ \ 
+  / ___ \ |___|  _  || || |___  \ V / | |___| |  | | |___| |\  | | |  ___) |
+ /_/   \_\____|_| |_|___|_____|  \_/  |_____|_|  |_|_____|_| \_| |_| |____/ 
+*/
+
+#achievements .points,
+#achievements .badges {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 1rem;
+  background-color: var(--bg-color);
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px gray;
+}
+
+#achievements .points legend,
+#achievements .badges legend {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+#achievements .points .value,
+#achievements .badges .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+#achievements .badges .wrapper {
+  flex-wrap: wrap;
+}
+
+#achievements .points .value {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: var(--secondary-color);
+}
+
+#achievements .badges .wrapper .box {
+  margin: 1rem;
+  width: 100px;
+  height: 100px;
+  background: whitesmoke;
+  border: solid 2px black;
+  border-radius: 1rem;
+  box-shadow: .1rem .1rem 1rem .1rem gray;
+}
+
+#achievements .badges .wrapper .box:hover {
+  cursor: pointer;
+  animation: 1s infinite alternate pulse;
+}
+
+#achievements .badges .wrapper .box .badge {
+  background-color: gold;
+  color: black;
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+}
+
+.badge-desc {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: gray;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  } to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/*
+  ____  _____ _____ _____ ___ _   _  ____ ____  
+ / ___|| ____|_   _|_   _|_ _| \ | |/ ___/ ___| 
+ \___ \|  _|   | |   | |  | ||  \| | |  _\___ \ 
+  ___) | |___  | |   | |  | || |\  | |_| |___) |
+ |____/|_____| |_|   |_| |___|_| \_|\____|____/ 
+*/
+
+#settings .preference {
+  font-size: 2rem;
+}
+
+#settings .option {
+  font-size: 1.5rem;
+}
+
+#settings .option .themes,
+#settings .option .notifications {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  appearance: none;
+  border-radius: 1rem;
+  background: white;
+}
+
+#settings .option .themes input {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  outline: 3px solid var(--radio-color);
+  outline-offset: 3px;
+  border-radius: 50%;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#settings input[type="radio"]:checked {
+  background: var(--radio-color);
+}
+
+#settings .option .themes #light {
+  --radio-color: lightgray;
+}
+
+#settings .option .themes #dark {
+  --radio-color: #232323;
+}
+
+#settings .option .themes #brown {
+  --radio-color: #3e282b;
+}
+
+#settings .option .themes #purple {
+  --radio-color: #6200EE;
+}
+
+#settings .option .notifications {
+  color: black;
+}
+
+#settings .option .notifications input {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  background: lightpink;
+  outline: solid 2px black;
+  outline-offset: 1px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#settings input[type="checkbox"]:checked {
+  background: lightseagreen;
+}
+
+#settings #clear-storage {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#settings #clear-storage:hover {
+  background-color: darkred;
+}
+
+@media screen and (min-width: 768px) {
+  #tasks .task-list .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #tasks .task-list .task-item .task-settings {
+    order: 2;
+  }
+  
+  #tasks .task-list .task-item .task-info {
+    order: 1;
+  }
+}

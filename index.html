@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="https://em-content.zobj.net/source/skype/289/check-mark-button_2705.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/22cb5ab257.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+
+    <div id="app">
+      <app-navigation></app-navigation>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.2/dist/vue-router.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
