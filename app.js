@@ -3,7 +3,7 @@ Vue.component("app-navigation", {
     <nav>
       <ul class="nav-links">
         <li>
-          <router-link to="/tasks" exact active-class="active-link"><i class="fa-solid fa-list"></i>Tasks</router-link>
+          <router-link to="/" exact active-class="active-link"><i class="fa-solid fa-list"></i>Tasks</router-link>
         </li>
         <li>
           <router-link to="/statistics" exact active-class="active-link"><i class="fa-solid fa-chart-line"></i>Statistics</router-link>
@@ -307,7 +307,7 @@ const SettingsComponent = {
 
 const router = new VueRouter({
   routes: [
-    { path: "/tasks", component: TasksComponent },
+    { path: "/", component: TasksComponent },
     { path: "/statistics", component: StatisticsComponent },
     { path: "/achievements", component: AchievementsComponent },
     { path: "/settings", component: SettingsComponent },
