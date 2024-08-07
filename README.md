@@ -1,6 +1,7 @@
 ## ToDoApp
 
 A simple ToDoApp built with Vue.js
+<br>
 Check the result [here](https://inxtwilliqm.github.io/ToDoApp/#/)
 
 ## Features
