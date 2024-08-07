@@ -17,9 +17,13 @@ This is my first Vue.js university project (SIT120), so don't give any high expe
 <br>
 Color theme works only in one page. If you ask why, I'm lazy :D
 
-## Result
+## Grade
 
 High Distinction
+
+## Result
+
+Check the result [here](https://inxtwilliqm.github.io/ToDoApp/#/).
 
 ## Bugs
 
