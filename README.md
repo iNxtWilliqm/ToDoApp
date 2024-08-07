@@ -1,6 +1,7 @@
 ## ToDoApp
 
 A simple ToDoApp built with Vue.js
+Check the result [here](https://inxtwilliqm.github.io/ToDoApp/#/)
 
 ## Features
 
@@ -20,10 +21,6 @@ Color theme works only in one page. If you ask why, I'm lazy :D
 ## Grade
 
 High Distinction
-
-## Result
-
-Check the result [here](https://inxtwilliqm.github.io/ToDoApp/#/).
 
 ## Bugs
 
