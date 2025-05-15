@@ -1,9 +1,7 @@
 ## ToDoApp
-
 A simple responsive [ToDoApp](https://inxtwilliqm.github.io/ToDoApp/#/) built with Vue.js
 
 ## Features
-
 - Add, delete, archive tasks
 - Statistics of tasks
 - Gamification (Points & Badges)
@@ -11,16 +9,10 @@ A simple responsive [ToDoApp](https://inxtwilliqm.github.io/ToDoApp/#/) built wi
 - Local storaging
 - Routing
 
-## Disclaimer
-
-This is my first Vue.js university project (SIT120), so don't give any high expectation.
-<br>
-Color theme works only in one page. If you ask why, I'm lazy :D
-
 ## Grade
-
 High Distinction
+> [!NOTE]
+This is my first Vue.js university project (SIT120), so don't give any high expectation. Color theme works only in one page due to time limitations.
 
 ## Bugs
-
 Report on [Github](https://github.com/iNxtWilliqm/ToDoApp/issues/new) if you find any bugs.
